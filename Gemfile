@@ -44,3 +44,13 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'byebug'
 
+# ElasticSearch
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
+# bootstrap
+gem 'bootstrap-sass'
+gem 'simple_form'
+gem "font-awesome-rails"
+
+
