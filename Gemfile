@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
+
+# haml templates
+gem 'haml-rails', '~> 0.5.3'
+gem 'haml', '~> 4.0.4'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
