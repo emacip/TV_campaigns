@@ -44,6 +44,13 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'byebug'
 
+# Test
+gem 'rspec'
+
+group :development, :test do
+  gem 'rspec-rails'
+end
+
 # ElasticSearch
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
