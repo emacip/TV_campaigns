@@ -10,15 +10,13 @@ namespace :vote do
     f = File.open("#{Rails.public_path}/votes.txt", "r")
     f.each_line do |line|
       begin
-        arr = line.split
-        if not arr.nil?
-          vote = Vote.new(time_vote: arr[1], campaign: arr[2].split(':')[1],
-                          validity: arr[3].split(':')[1], choice: arr[4].split(':')[1])
-          puts vote.time_vote.to_s
-          vote.save!
-        end
+       arr = line.split
       rescue
         puts "error in this row"
+      end
+      if not arr.nil?
+        VotesImporter.perform_async(arr)
+        puts line
       end
     end
     puts "Finish import"

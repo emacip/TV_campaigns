@@ -42,13 +42,14 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'byebug'
+
 
 # Test
 gem 'rspec'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'byebug'
 end
 
 # ElasticSearch
@@ -59,5 +60,14 @@ gem 'elasticsearch-rails'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem "font-awesome-rails"
+
+# Workers
+gem 'sidekiq'
+gem 'redis'
+gem 'redis-namespace'
+
+# sinatra is required for sidekiq monitoring web interface
+gem 'sinatra', '>= 1.3.0', :require => nil
+
 
 
