@@ -1,6 +1,6 @@
 module FactoryHelpers
 
-  def create_valid_ote(attrs = {})
+  def create_valid_vote(attrs = {})
     vote = new_valid_vote(attrs)
     vote.save
   end
