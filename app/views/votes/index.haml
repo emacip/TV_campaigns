@@ -1,0 +1,9 @@
+
+
+.row
+  - @campaignes.each do |campaigne|
+    .col-lg-4
+      %h2= campaigne
+      %p
+        %a.btn.btn-primary{:href => "#", :role => "button"} View details »
+
