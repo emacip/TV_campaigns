@@ -2,7 +2,7 @@
   - @campaignes.each do |campaigne|
     .col-lg-4
       %h2= campaigne
-      %p{style: 'display: inline-block;', data: {customize_url: show_votes_path(campaigne)}}
+      %p
         %button.btn.btn-primary.btn-lg{'data-toggle'=> 'modal', 'data-target' => "#customize_modal_#{campaigne}", :type => "button", id: "#{campaigne}" }
           View details »
 

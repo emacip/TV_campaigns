@@ -4,15 +4,15 @@ class VotesController < ApplicationController
   end
 
   def show
+
     @votes = (Vote.search query:{match: {campaign: params[:name]}},size: 12965)
     candidates = @votes.map(&:choice).uniq
-    results = candidates.inject({}) do |hash, candidate|
+    @results = candidates.inject({}) do |hash, candidate|
       hash[candidate] = {}
       hash[candidate] = {"score" => query_by_scores(params[:name], candidate).count , "not_score" => query_by_not_scores(params[:name], candidate).count}
       hash
     end
-    byebug
-    adsads
+    render :layout => false
   end
 
   private
