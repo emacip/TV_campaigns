@@ -14,7 +14,8 @@ namespace :vote do
       rescue
         puts "error in this row"
       end
-      if not arr.nil?
+
+      if  !arr.nil? && arr.first == "VOTE"
         VotesImporter.perform_async(arr)
         puts line
       end
