@@ -1,9 +1,20 @@
-
-
 .row
   - @campaignes.each do |campaigne|
     .col-lg-4
       %h2= campaigne
-      %p
-        %a.btn.btn-primary{:href => "#", :role => "button"} View details »
+      %p{style: 'display: inline-block;', data: {customize_url: show_votes_path(campaigne)}}
+        %button.btn.btn-primary.btn-lg{'data-toggle'=> 'modal', 'data-target' => "#customize_modal_#{campaigne}", :type => "button", id: "#{campaigne}" }
+          View details »
 
+      .modal.fade{id: "customize_modal_#{campaigne}",aria: {hidden: true, labelledby: 'customizeModalLabel'}, role: 'dialog', tabindex: '-1'}
+        .modal-dialog.modal-lg
+          .modal-content{:style => "color: #333; width:750px"}
+            .modal-header
+              %h4{style: 'display: inline-block'}= campaigne
+              %button.close{'data-dismiss' => 'modal', type: 'button', style: 'display: inline-block'}
+                %span{'aria-hidden' => 'true'} &times;
+                %span.sr-only Close
+            .modal-body
+              .center-block{style: 'text-align: center'}
+                .spinner-loader
+                %p Loading...
