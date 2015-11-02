@@ -1,1 +1,18 @@
-= @results.inspect
+.modal-content{:style => "color: #333; width:750px"}
+  .modal-header
+    %h4{style: 'display: inline-block'}= params[:name]
+    %button.close{'data-dismiss' => 'modal', type: 'button', style: 'display: inline-block'}
+      %span{'aria-hidden' => 'true'} &times;
+      %span.sr-only Close
+  .modal-body
+    .center-block{style: 'text-align: center'}
+      - @results.each do |result|
+        .row
+          .col-md-4
+            = result.first
+          .col-md-4
+            score
+            = result.second['score']
+          .col-md-4
+            No score
+            = result.second['not_score']
